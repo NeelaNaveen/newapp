@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Mytables</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mytables.each do |mytable| %>
+      <tr>
+        <td><%= mytable.name %></td>
+        <td><%= mytable.email %></td>
+        <td><%= link_to 'Show', mytable %></td>
+        <td><%= link_to 'Edit', edit_mytable_path(mytable) %></td>
+        <td><%= link_to 'Destroy', mytable, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mytable', new_mytable_path %>
